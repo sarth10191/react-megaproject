@@ -7,12 +7,12 @@ import { login } from "../store/authSlice";
 import { useForm } from "react-hook-form";
 
 function SignUp(){
-    const {error, setError} = useState("")
+    const [error, setError]= useState("")
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const {register, handleSubmit} = useForm()
 
-    const signup = async (data)=>{
+    const SignUp = async (data)=>{
         setError("")
         try{
             const userAccount = await authService.createAccount(data)
@@ -49,9 +49,9 @@ function SignUp(){
                         <Input
                             label="Full name"
                             placeholder="Enter your Name"
-                            {...register("name"), {
+                            {...register("name", {
                                 requried:true
-                            }}
+                            })}
                         ></Input>
                         <Input 
                             label="Email:"
@@ -81,3 +81,5 @@ function SignUp(){
         </div>
     )
 }
+
+export default SignUp

@@ -3,7 +3,7 @@ import service from "../../appwrite/config";
 import Container from "../Container/Container";
 import {PostCard} from "../index.js"
 
-function AllPosts(){
+export default function AllPosts(){
     const [posts, setPosts] = useState([])
 
     useEffect(()=>{}, [])
